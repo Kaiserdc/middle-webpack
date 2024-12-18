@@ -19,7 +19,6 @@ module.exports = {
         new CopyWebpackPlugin({
             patterns: [
                 {from: path.resolve(__dirname, './public/favicon.png'), to: path.resolve(__dirname, './dist')},
-
             ]
         }),
         new MiniCssExtractPlugin({
@@ -37,21 +36,21 @@ module.exports = {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
                 type: 'asset/resource',
                 generator: {
-                    filename: 'img/[name].[contenthash].[ext]',
+                    filename: 'img/[name].[contenthash][ext]',
                 }
             },
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/i,
                 type: 'asset/resource',
                 generator: {
-                    filename: 'fonts/[name].[contenthash].[ext]'
+                    filename: 'fonts/[name].[contenthash][ext]'
                 }
             },
             {
                 test: /\.(ogg|mp3|wav|mpe?g)$/i,
                 type: 'asset/resource',
                 generator: {
-                    filename: 'sounds/[name].[ext]'
+                    filename: 'sounds/[name].[contenthash][ext]'
                 }
             },
         ]
